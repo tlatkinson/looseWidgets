@@ -1,7 +1,7 @@
 var ta = (function (my) {
     'use strict';
 
-    var widgetHandler = function () {
+    var eventHandler = function () {
 
         function bindEvent (element, eventName, eventFunc) {
             $(element).bind(eventName, function (e) {
@@ -14,6 +14,6 @@ var ta = (function (my) {
         };
     }();
 
-    my.widgetHandler = widgetHandler;
+    my.eventHandler = eventHandler;
     return my;
 }(ta || {}));

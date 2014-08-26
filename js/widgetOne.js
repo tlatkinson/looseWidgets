@@ -4,11 +4,19 @@ var ta = (function (my) {
     my.widgetOne = function (selector) {
         if(!selector) return;
 
-        var $ele = $(selector);
-        $ele.append('<div style="width: 200px; height: 200px; background-color: lightblue; border: 1px solid blue"></div>');
+        var $ele = $(selector),
+            width = 200;
 
-        ta.widgetHandler.bindEvent('body', 'ta-custom-event', function (e) {
-            console.log('rawer');
+        $ele.append($('<div>').css({
+            width: width + 'px',
+            height: '200px',
+            'background-color': 'lightblue',
+            border: '1px solid blue'
+        }));
+
+        ta.eventHandler.bindEvent('body', 'ta-custom-event', function (e) {
+            width += 20;
+            $ele.find('div').css({'width' : width + 'px'})
         });
 
         return {};

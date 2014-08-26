@@ -9,6 +9,6 @@
 
         setInterval(function () {
             $('body').trigger('ta-custom-event');
-        }, 3000);
+        }, 2000);
     });
 }());
